@@ -45,11 +45,11 @@ public class C04_Put_ResponseBilgileriAssertion {
 
         // 3- Response'i kaydet
 
-        Response response=given().
-                contentType(ContentType.JSON).
+        Response response = given().
+                        contentType(ContentType.JSON).
                 when().
-                body(reqBody.toString()).
-                put(url);
+                        body(reqBody.toString()).
+                        put(url);
 
         response.prettyPrint();
 
