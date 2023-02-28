@@ -8,6 +8,9 @@ import org.json.JSONObject;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.*;
+
+
 
 public class C6_Post_ResponseBodyTesti {
 
@@ -62,7 +65,45 @@ public class C6_Post_ResponseBodyTesti {
                 statusCode(201).
                 contentType(ContentType.JSON).
                 body("title", Matchers.equalTo("API")).
-                body("userId",Matchers.lessThan(100)).
-                body("body",Matchers.containsString("API"));
+                body("userId", lessThan(100)).
+                body("body", containsString("API"));
+    }
+    @Test
+    public void post02() {
+
+        // 1- URL ve Body hazirla
+
+        String url = "https://jsonplaceholder.typicode.com/posts";
+
+        JSONObject reqBody = new JSONObject();
+
+        reqBody.put("title", "API");
+        reqBody.put("body", "API ogrenmek ne guzel");
+        reqBody.put("userId", 10);
+
+        System.out.println(reqBody);
+
+        // 2- Expecteed Data Hazirla
+
+        // 3- Response'i kaydet
+
+        Response response = given().
+                contentType(ContentType.JSON).
+                when().
+                body(reqBody.toString()).
+                post(url);
+
+        response.prettyPrint();
+
+        // 4- Assertion
+
+        response.
+                then().
+                assertThat().
+                statusCode(201).
+                contentType(ContentType.JSON).
+                body("title", equalTo("API"),
+                "userId", lessThan(100),
+                "body", containsString("API"));
     }
 }
