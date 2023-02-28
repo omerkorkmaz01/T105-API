@@ -3,7 +3,6 @@ package test;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.hamcrest.Matchers;
-import org.hamcrest.text.MatchesPattern;
 import org.json.JSONObject;
 import org.junit.Test;
 
@@ -12,7 +11,7 @@ import static org.hamcrest.Matchers.*;
 
 
 
-public class C6_Post_ResponseBodyTesti {
+public class C06_Post_ResponseBodyTesti {
 
     /*
             https://jsonplaceholder.typicode.com/posts  url’ine asagidaki body ile bir POST request gonderdigimizde
