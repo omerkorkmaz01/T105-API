@@ -85,6 +85,6 @@ public class C09_Post_JsonPathIleBodyTesti {
                         "booking.depositpaid",equalTo(false),
                         "booking.bookingdates.checkin",equalTo("2021-06-01"),
                         "booking.bookingdates.checkout",equalTo("2021-06-10"),
-                        "booking.bookingdates.additionalneeds",equalTo("wi-fi"));
+                        "booking.additionalneeds",equalTo("wi-fi"));
     }
 }
