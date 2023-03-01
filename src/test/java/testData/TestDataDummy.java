@@ -31,9 +31,9 @@ public class TestDataDummy {
     public JSONObject expectedBodyOlusturJson(){
         JSONObject expBody = new JSONObject();
 
-        innerJSONBody().put("status","success");
-        innerJSONBody().put("message","Successfully! Record has been fetched.");
-        innerJSONBody().put("data",innerJSONBody());
+        expBody.put("status","success");
+        expBody.put("message","Successfully! Record has been fetched.");
+        expBody.put("data",innerJSONBody());
 
         return expBody;
     }
