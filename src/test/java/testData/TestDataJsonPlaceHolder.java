@@ -47,7 +47,7 @@ public JSONObject requestBodyOlusturJSON(){
 
         requestBodyMap.put("title", "Ahmet");
         requestBodyMap.put("body", "Merhaba");
-        requestBodyMap.put("userId", 10.);
+        requestBodyMap.put("userId", 10.0);
         requestBodyMap.put("id", 70.0);
 
         return requestBodyMap;
