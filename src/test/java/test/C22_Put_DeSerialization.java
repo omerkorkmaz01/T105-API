@@ -63,6 +63,11 @@ public class C22_Put_DeSerialization extends JsonPlaceHolderBaseUrl {
 
         // 4 - Assertion
 
+        // Not : Bizim hazirlamis oldugumuz Expected Data Map formatinda.
+        // Bize response'dan donen Response Body ise Json formatinda
+        // Ikisini Assert methodlari icerisinde kiyaslayabilmemiz icin oncelikle
+        // response'i map formatina parse etmemiz gerekiyor.
+
         HashMap<String ,Object> respMap= response.as(HashMap.class);
 
         Assert.assertEquals(testDataJsonPlaceHolder.basariliStatusCode,response.getStatusCode());
